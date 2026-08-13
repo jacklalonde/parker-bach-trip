@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daisy &amp; Devin's Bach Trip — Parker, AZ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --river-teal: #1B7A8C;
+    --river-deep: #0F4C5C;
+    --sunset: #FF6B45;
+    --sand: #F3DEB8;
+    --cream: #FFF9EF;
+    --navy: #14262B;
+    --line: rgba(20,38,43,0.12);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: linear-gradient(180deg, #E8F4FA 0%, #EAF3E1 42%, #F1ECD7 100%);
+    background-attachment: fixed;
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  img { display: block; }
+
+  .display {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .mono { font-family: 'Space Mono', monospace; }
+
+  /* ---------- HERO (THE SKY) ---------- */
+  .hero {
+    background:
+linear-gradient(180deg,
+#3FA6E8 0%,
+#5FC8F5 38%,
+#7FD9F7 62%,
+#A6E9FA 100%);
+    color: var(--cream);
+    padding: 88px 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #103E4A;
+    margin-bottom: 24px;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.35);
+    position: relative;
+    z-index: 5;
+}
+
+  .hero h1 {
+    font-size: clamp(52px, 12vw, 120px);
+    line-height: 0.9;
+    color: var(--cream);
+    text-shadow: 0 4px 18px rgba(15,76,92,0.35);
+  }
+
+  .hero h1 span { color: var(--sunset); }
+
+  .hero-sub {
+    margin: 22px auto 0;
+    font-size: clamp(16px, 2.4vw, 20px);
+    color: var(--river-deep);
+    max-width: 540px;
+  }
+
+  .location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 11px 22px;
+    border: 1.5px solid rgba(15,76,92,0.4);
+    border-radius: 999px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--river-deep);
+    background: rgba(255,249,239,0.25);
+  }
+
+  /* ---- SUN ---- */
+  .sun {
+    position: absolute;
+    top: 46px;
+    right: 11%;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #FFE9A8 0%, #FFCE5C 55%, #FFB84A 100%);
+    box-shadow: 0 0 55px 18px rgba(255,206,92,0.55);
+    z-index: 1;
+    animation: sunPulse 6s ease-in-out infinite;
+  }
+
+  @keyframes sunPulse {
+    0%, 100% { box-shadow: 0 0 55px 18px rgba(255,206,92,0.5); }
+    50%      { box-shadow: 0 0 78px 26px rgba(255,206,92,0.72); }
+  }
+
+  /* ---- CLOUDS ---- */
+  .cloud {
+    position: absolute;
+    fill: #ffffff;
+    z-index: 1;
+    will-change: transform;
+  }
+  .cloud-1 { top: 70px;  width: 132px; opacity: 0.92; animation: drift 34s linear infinite; }
+  .cloud-2 { top: 150px; width: 96px;  opacity: 0.8;  animation: drift 48s linear infinite; animation-delay: -12s; }
+  .cloud-3 { top: 34px;  width: 74px;  opacity: 0.72; animation: drift 60s linear infinite; animation-delay: -30s; }
+
+  @keyframes drift {
+    from { transform: translateX(-160px); }
+    to   { transform: translateX(105vw); }
+  }
+
+  @media (max-width: 700px) {
+    .sun { width: 62px; height: 62px; top: 26px; right: 6%; }
+    .cloud-2 { top: 128px; }
+  }
+
+  /* ---- BANNER PLANE ---- */
+  .plane {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 340px;
+    z-index: 1;
+    will-change: transform;
+    animation: fly 20s linear infinite;
+}
+  .plane svg { display: block; width: 340px; height: auto; }
+
+  @keyframes fly {
+    from { transform: translateX(-380px); }
+    to   { transform: translateX(105vw); }
+  }
+
+  @media (max-width: 700px) {
+    .plane {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 340px;
+    z-index: 1;
+    will-change: transform;
+    animation: fly 20s linear infinite;
+}
+    .plane svg { width: 250px; }
+  }
+
+
+  /* ---- PARKER / COLORADO RIVER DESERT LANDSCAPE ---- */
+  .desert-landscape {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 42px;
+    width: 100%;
+    height: clamp(150px, 22vw, 250px);
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .desert-landscape svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 700px) {
+    .desert-landscape {
+      bottom: 46px;
+      height: 175px;
+      opacity: 0.95;
+    }
+  }
+
+  .wave {
+    width: calc(100% + 48px);
+    margin: 60px -24px 0;
+    height: 60px;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ---------- COUNTDOWN (THE LAKE) ---------- */
+  .countdown-section {
+    background:
+      radial-gradient(circle at left center, rgba(145,240,255,.20) 0%, rgba(145,240,255,0) 28%),
+      radial-gradient(circle at right center, rgba(145,240,255,.20) 0%, rgba(145,240,255,0) 28%),
+      repeating-linear-gradient(180deg, rgba(255,255,255,0.06) 0 2px, rgba(255,255,255,0) 2px 26px),
+      linear-gradient(180deg,#20A9D6 0%, #1489B2 40%, #0E5F79 100%);
+    padding: 132px 24px 56px;
+    text-align: center;
+    margin-top: -2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ---- BOAT + WAKEBOARDER ---- */
+  .boat-lane {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .boat-sail {
+    position: absolute;
+    left: 0;
+    width: 244px;
+    animation: sail 13s linear infinite;
+  }
+
+  .boat-svg {
+    display: block;
+    width: 244px;
+    height: 100px;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+
+  @keyframes sail {
+    from { transform: translateX(-280px); }
+    to   { transform: translateX(calc(100vw + 60px)); }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50%      { transform: translateY(-5px) rotate(1deg); }
+  }
+
+  /* Pivot the jump around the hands (where the rope attaches) so the rope
+     stays connected while the board pops up. */
+  .rider {
+    transform-box: fill-box;
+    transform-origin: 96% 40%;
+    animation: wbJump 3s ease-in-out infinite;
+  }
+
+  @keyframes wbJump {
+    0%, 42%  { transform: rotate(0deg); }
+    62%      { transform: rotate(-15deg); }
+    72%      { transform: rotate(-17deg); }
+    86%,100% { transform: rotate(0deg); }
+  }
+
+  .countdown-label {
+    position: relative;
+    z-index: 2;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,249,239,0.9);
+    margin-bottom: 22px;
+  }
+
+  .countdown-grid { position: relative; z-index: 2; }
+
+  .countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 28px);
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .countdown-unit {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 18px 14px;
+    min-width: 84px;
+    box-shadow: 0 6px 0 var(--navy);
+  }
+
+  .countdown-num {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(32px, 6vw, 52px);
+    color: var(--river-deep);
+    line-height: 1;
+  }
+
+  .countdown-unit-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 6px;
+    color: var(--navy);
+    opacity: 0.65;
+  }
+
+  /* ---------- FULL-BLEED PHOTO BANDS ---------- */
+  /* Tiles stretch edge-to-edge. Packing many photos per band keeps each tile
+     narrow and tall, so the portrait shots crop at the sides (not the heads). */
+  .photo-band {
+    --band-h: clamp(240px, 30vw, 340px);
+    display: flex;
+    gap: 3px;
+    width: 100%;
+    background: var(--navy);
+  }
+
+  .photo-band img {
+    flex: 1 1 0;
+    min-width: 0;
+    height: var(--band-h);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 700px) {
+    .photo-band {
+      --band-h: 300px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .photo-band::-webkit-scrollbar { display: none; }
+    .photo-band img {
+      flex: 0 0 62%;
+      scroll-snap-align: center;
+    }
+  }
+
+
+  .photo-gallery-bottom {
+    width: 100%;
+    background: var(--navy);
+  }
+
+  .photo-gallery-bottom .photo-band + .photo-band {
+    margin-top: 3px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding: 84px 24px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* The three sections share one continuous scene: water on the left with the
+     content, and a single grass field running down the right (.field). */
+  .parkside {
+    position: relative;
+    /* river water: same family as the upper section, with a softer turquoise gradient */
+    background:
+      radial-gradient(circle at left center, rgba(150,242,255,.18) 0%, rgba(150,242,255,0) 28%),
+      radial-gradient(circle at right center, rgba(110,230,255,.14) 0%, rgba(110,230,255,0) 30%),
+      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='150'%20height='90'%3E%3Cg%20fill='none'%20stroke='%23ffffff'%20stroke-opacity='0.26'%20stroke-width='2'%20stroke-linecap='round'%3E%3Cpath%20d='M6,20%20q14,-7%2028,0%20t28,0'/%3E%3Cpath%20d='M80,54%20q14,-7%2028,0%20t28,0'/%3E%3C/g%3E%3Cg%20fill='none'%20stroke='%230d3b52'%20stroke-opacity='0.09'%20stroke-width='2'%20stroke-linecap='round'%3E%3Cpath%20d='M60,74%20q14,-7%2028,0%20t28,0'/%3E%3C/g%3E%3C/svg%3E") repeat,
+      linear-gradient(180deg, #38B7E4 0%, #229CC9 42%, #167FA5 72%, #0F637E 100%);
+    --field-w: clamp(360px, 42vw, 620px);
+  }
+
+  #itinerary, #logistics, #guests {
+    max-width: none;
+    margin: 0;
+    padding: 78px 0;
+    /* leave room on the right for the grass field */
+    padding-right: var(--field-w);
+  }
+
+  .col-main {
+    max-width: 680px;
+    margin: 0 auto;                          /* center the content in the water */
+    padding: 0 clamp(24px, 4vw, 56px);
+    min-width: 0;
+  }
+
+  #itinerary { padding-bottom: 40px; }
+  #logistics { padding-top: 40px; }
+
+  .field {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--field-w);
+    overflow: hidden;
+    /* grass, with a continuous wavy sandy shoreline down the left edge */
+    background:
+      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='66'%20height='220'%3E%3Cpath%20d='M0,0%20L52,0%20C64,55%2042,55%2052,110%20C64,165%2042,165%2052,220%20L0,220%20Z'%20fill='%23E9D6A0'/%3E%3Cpath%20d='M52,0%20C64,55%2042,55%2052,110%20C64,165%2042,165%2052,220'%20fill='none'%20stroke='%23D3B876'%20stroke-width='2'/%3E%3C/svg%3E") left top / 66px 220px repeat-y,
+      #76A85A;
+  }
+
+  .field-svg {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .parkside { --field-w: 0px; background: transparent; }
+    #itinerary, #logistics, #guests { padding: 64px 0; padding-right: 0; }
+    .field { display: none; }
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .section-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    color: #FF7A52;
+    background: var(--river-deep);
+    padding: 9px 11px;
+    border-radius: 9px;
+    box-shadow: 0 3px 0 rgba(20,38,43,0.18);
+    letter-spacing: 0.5px;
+  }
+
+  .section-head h2 { font-size: clamp(30px, 5vw, 44px); }
+
+  /* ---------- ITINERARY ---------- */
+  .day-card {
+    padding: 18px 16px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr) 150px;
+    gap: 14px;
+    align-items: center;
+    background: rgba(255,249,239,0.34);
+    border: 1px solid rgba(15,76,92,0.13);
+    border-radius: 16px;
+    box-shadow: 0 5px 14px rgba(15,76,92,0.08);
+  }
+
+  .day-card:last-child { margin-bottom: 0; }
+
+  .day-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 27px;
+    line-height: 1;
+    color: var(--river-deep);
+  }
+
+  .day-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.72;
+    margin-top: 6px;
+  }
+
+  .day-tag {
+    display: inline-block;
+    margin-top: 9px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: var(--sand);
+    color: var(--navy);
+  }
+
+  .day-list { list-style: none; }
+
+  .day-list li {
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 10px;
+    padding: 7px 0;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(15,76,92,0.10);
+  }
+
+  .day-list li:last-child { border-bottom: 0; }
+
+  .day-list .time {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #D94B2B;
+    letter-spacing: 0.15px;
+    text-align: right;
+    background: rgba(255,249,239,0.82);
+    padding: 3px 5px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .day-list .act {
+    min-width: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--navy);
+  }
+
+  .day-list .note {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.65;
+    margin-top: 3px;
+  }
+
+  .day-photo {
+    width: 150px;
+    height: 194px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(15,76,92,0.18);
+  }
+
+  @media (max-width: 700px) {
+    .section-head { margin-bottom: 22px; }
+    .section-num { font-size: 18px; padding: 8px 9px; }
+    .day-card {
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 12px;
+      padding: 16px;
+    }
+    .day-photo {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 260px;
+      margin-top: 4px;
+    }
+    .day-list li { grid-template-columns: 62px minmax(0, 1fr); gap: 8px; }
+    .day-list .time { font-size: 12px; }
+    .day-list .act { font-size: 14px; }
+  }
+
+  /* ---------- LOGISTICS ---------- */
+  .logistics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .logistics-card {
+    background: var(--river-deep);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .logistics-card .big {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    color: var(--sunset);
+  }
+
+  .logistics-card .small {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 6px;
+    opacity: 0.75;
+  }
+
+  .logistics-address {
+    grid-column: 1 / -1;
+    background: var(--river-deep);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 24px 28px;
+  }
+
+  .logistics-address .address-link {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 27px;
+    white-space: nowrap;
+    line-height: 1.12;
+    color: var(--sunset);
+    text-decoration: none;
+  }
+
+  .logistics-address .address-link:hover,
+  .logistics-address .address-link:focus {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .logistics-note {
+    grid-column: 1 / -1;
+    background: var(--sand);
+    border-radius: 16px;
+    padding: 24px 28px;
+    font-size: 15px;
+  }
+
+  @media (max-width: 560px) {
+    .logistics-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- GUEST LIST ---------- */
+  /* Two rows — boys on top, girls below — each stretched to equal full width. */
+  .guest-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .guest-chip {
+    flex: 1 1 0;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    padding: 11px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.65);
+    border: 1.5px solid var(--river-teal);
+    color: var(--river-deep);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 520px) {
+    .guest-row { flex-wrap: wrap; }
+    .guest-chip { flex: 1 1 40%; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    padding: 56px 24px 72px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--navy);
+    opacity: 0.55;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="sun"></div>
+  <svg class="cloud cloud-1" viewBox="0 0 120 60" aria-hidden="true">
+    <ellipse cx="40" cy="38" rx="26" ry="17"/>
+    <ellipse cx="66" cy="32" rx="24" ry="22"/>
+    <ellipse cx="90" cy="40" rx="20" ry="15"/>
+    <rect x="28" y="40" width="70" height="15" rx="7.5"/>
+  </svg>
+  <svg class="cloud cloud-2" viewBox="0 0 120 60" aria-hidden="true">
+    <ellipse cx="40" cy="38" rx="26" ry="17"/>
+    <ellipse cx="66" cy="32" rx="24" ry="22"/>
+    <ellipse cx="90" cy="40" rx="20" ry="15"/>
+    <rect x="28" y="40" width="70" height="15" rx="7.5"/>
+  </svg>
+  <svg class="cloud cloud-3" viewBox="0 0 120 60" aria-hidden="true">
+    <ellipse cx="40" cy="38" rx="26" ry="17"/>
+    <ellipse cx="66" cy="32" rx="24" ry="22"/>
+    <ellipse cx="90" cy="40" rx="20" ry="15"/>
+    <rect x="28" y="40" width="70" height="15" rx="7.5"/>
+  </svg>
+
+  <div class="plane">
+    <svg viewBox="0 0 340 64" aria-hidden="true">
+      <line x1="236" y1="35" x2="266" y2="33" stroke="#14262B" stroke-width="1.2" opacity="0.6"/>
+      <rect x="36" y="16" width="200" height="38" rx="6" fill="#0C2C57"/>
+      <rect x="36" y="16" width="200" height="38" rx="6" fill="none" stroke="#C9A24A" stroke-width="2"/>
+      <circle cx="58" cy="35" r="12" fill="#C9A24A"/>
+      <circle cx="58" cy="35" r="12" fill="none" stroke="#0C2C57" stroke-width="1.2"/>
+      <path d="M58,28 L59.9,32.4 L64.7,32.6 L60.9,35.6 L62.3,40.3 L58,37.6 L53.7,40.3 L55.1,35.6 L51.3,32.6 L56.1,32.4 Z" fill="#0C2C57"/>
+      <text x="155" y="32" text-anchor="middle" font-family="Anton, sans-serif" font-size="15" letter-spacing="1.5" fill="#E9C877">MICHELOB</text>
+      <line x1="112" y1="37" x2="198" y2="37" stroke="#C9A24A" stroke-width="1"/>
+      <text x="155" y="49" text-anchor="middle" font-family="Anton, sans-serif" font-size="14" letter-spacing="7" fill="#FFFFFF">ULTRA</text>
+      <g>
+        <path d="M262,33 L256,21 L268,28 Z" fill="#D64B3F"/>
+        <ellipse cx="292" cy="33" rx="30" ry="8.5" fill="#EEF3F7"/>
+        <path d="M318,33 Q332,33 330,29 L318,27 Z" fill="#D64B3F"/>
+        <ellipse cx="296" cy="39" rx="14" ry="4" fill="#C6D2DB"/>
+        <circle cx="300" cy="31" r="2.2" fill="#4E8FBF"/>
+        <circle cx="288" cy="31" r="2.2" fill="#4E8FBF"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div class="eyebrow">Joint Bachelor · Bachelorette Trip</div>
+    <h1 class="display">DAISY &amp; DEVIN'S<br><span>BACH TRIP</span></h1>
+    <p class="hero-sub">Two soon-to-be-newlyweds. Five days on the Colorado River. One last send-off before the wedding.</p>
+    <div class="location-badge"><span style='font-size:1.25em;vertical-align:-0.08em;'>📍</span> Parker, Arizona</div>
+  </div>
+
+  <!-- Decorative Parker, Arizona desert / Colorado River landscape -->
+  <div class="desert-landscape" aria-hidden="true">
+    <svg viewBox="0 0 1440 240" preserveAspectRatio="none">
+      <!-- distant hazy ranges -->
+      <path d="M0,150 L90,112 L160,132 L235,92 L320,137 L410,108 L500,150 L590,125 L680,158 L760,142 L855,162 L950,126 L1040,148 L1130,105 L1215,136 L1310,94 L1440,142 L1440,240 L0,240 Z" fill="#C98B63" opacity="0.42"/>
+      <path d="M0,177 L85,132 L145,151 L220,116 L300,164 L390,126 L470,169 L560,143 L645,178 L730,158 L815,181 L910,143 L1005,168 L1085,128 L1170,160 L1260,122 L1350,154 L1440,131 L1440,240 L0,240 Z" fill="#B9684B" opacity="0.58"/>
+
+      <!-- left red-rock mesas -->
+      <path d="M0,204 L0,130 L44,118 L62,84 L94,78 L111,98 L137,103 L156,122 L181,128 L203,163 L232,169 L246,192 L286,201 L286,240 L0,240 Z" fill="#9D523D"/>
+      <path d="M0,204 L0,150 L30,140 L50,113 L72,105 L89,121 L111,125 L130,143 L160,151 L184,177 L216,184 L235,203 Z" fill="#C87550"/>
+      <path d="M42,132 L60,99 L77,91 L92,111 L73,109 L58,136 Z" fill="#E49A67" opacity="0.8"/>
+      <path d="M121,145 L148,119 L166,132 L187,166 L162,158 Z" fill="#E49A67" opacity="0.62"/>
+
+      <!-- right red-rock mesas -->
+      <path d="M1440,240 L1150,240 L1150,202 L1187,194 L1208,165 L1237,157 L1258,129 L1281,121 L1300,89 L1329,82 L1346,104 L1372,109 L1391,133 L1412,137 L1440,154 Z" fill="#96513D"/>
+      <path d="M1440,240 L1181,240 L1181,209 L1212,199 L1234,174 L1262,166 L1283,139 L1304,132 L1321,105 L1344,99 L1361,120 L1384,125 L1404,149 L1440,165 Z" fill="#C87550"/>
+      <path d="M1287,142 L1310,103 L1326,92 L1341,114 L1323,111 L1304,148 Z" fill="#E49A67" opacity="0.82"/>
+      <path d="M1360,132 L1379,116 L1397,138 L1416,159 L1389,151 Z" fill="#E49A67" opacity="0.62"/>
+
+      <!-- sandy shoreline -->
+      <path d="M0,207 C115,191 205,205 320,211 C438,218 538,204 650,211 C766,219 877,202 982,210 C1085,218 1191,205 1293,211 C1357,215 1407,211 1440,207 L1440,240 L0,240 Z" fill="#E7BE79"/>
+      <path d="M0,216 C120,203 220,217 334,220 C460,224 555,212 667,219 C780,226 875,211 991,218 C1097,225 1204,211 1312,218 C1362,221 1407,219 1440,216" fill="none" stroke="#C99553" stroke-width="3" opacity="0.65"/>
+
+      <!-- desert shrubs -->
+      <g fill="#507A3D">
+        <ellipse cx="26" cy="202" rx="22" ry="8"/><ellipse cx="54" cy="201" rx="18" ry="7"/>
+        <ellipse cx="220" cy="204" rx="21" ry="7"/><ellipse cx="252" cy="205" rx="15" ry="6"/>
+        <ellipse cx="1188" cy="202" rx="20" ry="7"/><ellipse cx="1220" cy="203" rx="14" ry="6"/>
+        <ellipse cx="1395" cy="203" rx="24" ry="8"/><ellipse cx="1424" cy="201" rx="17" ry="7"/>
+      </g>
+
+      <!-- left saguaro -->
+      <g fill="#3F6E3E">
+        <rect x="170" y="142" width="10" height="67" rx="5"/>
+        <rect x="160" y="161" width="8" height="26" rx="4"/>
+        <rect x="182" y="153" width="8" height="31" rx="4"/>
+        <rect x="160" y="174" width="14" height="8" rx="4"/>
+        <rect x="176" y="166" width="14" height="8" rx="4"/>
+      </g>
+
+      <!-- right saguaro -->
+      <g fill="#3F6E3E">
+        <rect x="1264" y="136" width="11" height="74" rx="5.5"/>
+        <rect x="1251" y="157" width="9" height="29" rx="4.5"/>
+        <rect x="1279" y="148" width="9" height="35" rx="4.5"/>
+        <rect x="1251" y="175" width="18" height="8" rx="4"/>
+        <rect x="1270" y="163" width="18" height="8" rx="4"/>
+      </g>
+
+      <!-- foreground rocks -->
+      <g fill="#A45D41">
+        <ellipse cx="104" cy="208" rx="23" ry="10"/><ellipse cx="128" cy="211" rx="16" ry="7"/>
+        <ellipse cx="1320" cy="208" rx="27" ry="11"/><ellipse cx="1350" cy="211" rx="18" ry="8"/>
+      </g>
+    </svg>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 C120,20 240,20 360,12 C480,4 600,4 720,12 C840,20 960,20 1080,12 C1200,4 1320,4 1440,0 L1440,60 L0,60 Z" fill="#1785A6"/>
+  </svg>
+</div>
+
+<div class="countdown-section">
+  <div class="boat-lane">
+    <div class="boat-sail">
+      <svg class="boat-svg" viewBox="0 0 244 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <!-- tow rope -->
+        <path d="M117,59 Q92,57 66,55" stroke="#FFF9EF" stroke-width="1.4" fill="none" opacity="0.85"/>
+
+        <!-- wakeboarder (leaning back, hips pushed back; jumps on a loop) -->
+        <g class="rider">
+          <rect x="34" y="72" width="42" height="5" rx="2.5" fill="#14262B" transform="rotate(-5 55 74)"/>
+          <g fill="#ffffff">
+            <path d="M28,78 Q40,69 52,78 Q40,81 28,78 Z" opacity="0.7"/>
+            <circle cx="30" cy="74" r="1.6" opacity="0.65"/>
+          </g>
+          <g stroke="#14262B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M38,58 L50,64 L50,72"/>
+            <path d="M38,58 L44,65 L42,72"/>
+            <path d="M38,58 L46,48"/>
+            <path d="M46,48 L66,55"/>
+          </g>
+          <circle cx="49" cy="43" r="5" fill="#F3DEB8"/>
+        </g>
+
+        <!-- boat -->
+        <ellipse cx="116" cy="73" rx="8" ry="2.4" fill="#ffffff" opacity="0.35"/>
+        <rect x="112" y="57" width="9" height="15" rx="2" fill="#14262B"/>
+        <path d="M120,58 L214,58 L204,72 L134,72 Z" fill="#FFF9EF"/>
+        <path d="M214,58 L233,63 L204,72 Z" fill="#FFF9EF"/>
+        <path d="M124,62 L212,62 L208,66 L128,66 Z" fill="#FF6B45"/>
+        <path d="M170,56 L178,56 L176,50 L172,50 Z" fill="#0E5468"/>
+        <circle cx="174" cy="50" r="5.5" fill="#F3DEB8"/>
+        <path d="M180,57 L196,57 L191,47 L184,47 Z" fill="#BFE4F5"/>
+        <line x1="230" y1="60" x2="230" y2="45" stroke="#14262B" stroke-width="1.6"/>
+        <path d="M230,45 L242,49 L230,52 Z" fill="#FF6B45"/>
+      </svg>
+    </div>
+  </div>
+  <div class="countdown-label">Time until we hit the water</div>
+  <div class="countdown-grid" id="countdown">
+    <div class="countdown-unit"><div class="countdown-num" id="cd-days">--</div><div class="countdown-unit-label">Days</div></div>
+    <div class="countdown-unit"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-unit-label">Hours</div></div>
+    <div class="countdown-unit"><div class="countdown-num" id="cd-mins">--</div><div class="countdown-unit-label">Mins</div></div>
+    <div class="countdown-unit"><div class="countdown-num" id="cd-secs">--</div><div class="countdown-unit-label">Secs</div></div>
+  </div>
+</div>
+
+
+
+
+<div class="photo-band">
+  <img src="web-photos/IMG_8102.JPG" alt="Daisy">
+  <img src="web-photos/IMG_0888.JPG" alt="Devin">
+  <img src="web-photos/IMG_8273.JPG" alt="Daisy">
+  <img src="web-photos/IMG_3834.jpg" alt="Devin">
+  <img src="web-photos/IMG_8819.JPG" alt="Daisy">
+  <img src="web-photos/IMG_6347.jpg" alt="Devin">
+  <img src="web-photos/IMG_8709.JPG" alt="Daisy">
+  <img src="web-photos/DA76E56F-19BB-4742-93BB-4B8E4997414C.JPG" alt="Devin">
+  <img src="web-photos/IMG_1062.jpg" alt="Daisy">
+</div>
+
+<div class="parkside">
+<section id="itinerary">
+  <div class="col-main">
+  <div class="section-head">
+    <div class="section-num mono">01</div>
+    <h2 class="display">The Plan</h2>
+  </div>
+
+  <div class="day-card">
+    <div>
+      <div class="day-name">Wed</div>
+      <div class="day-date">Aug 26</div>
+      <div class="day-tag">Arrival</div>
+    </div>
+    <ul class="day-list">
+      <li><span class="time">12 PM</span><span class="act">Drive to Parker</span></li>
+      <li><span class="time">4 PM</span><span class="act">Arrive to Parker<span class="note">Rides &amp; time TBD</span></span></li>
+      <li><span class="time">8 PM</span><span class="act">Commencement Celebration</span></li>
+    </ul>
+    <img class="day-photo" src="web-photos/IMG_0544.jpg" alt="Wednesday arrival photo">
+  </div>
+
+  <div class="day-card">
+    <div>
+      <div class="day-name">Thu</div>
+      <div class="day-date">Aug 27</div>
+      <div class="day-tag">Beer Olympics</div>
+    </div>
+    <ul class="day-list">
+      <li><span class="time">10 AM</span><span class="act">Wake up + breakfast at the Airbnb</span></li>
+      <li><span class="time">12 PM</span><span class="act">Beer Olympics</span></li>
+      <li><span class="time">7 PM</span><span class="act">Dinner</span></li>
+      <li><span class="time">8:30 PM</span><span class="act">Games + surprise activities</span></li>
+    </ul>
+    <img class="day-photo" src="web-photos/IMG_6944.JPEG" alt="Daisy repping the drinks for Beer Olympics">
+  </div>
+
+  <div class="day-card">
+    <div>
+      <div class="day-name">Fri</div>
+      <div class="day-date">Aug 28</div>
+      <div class="day-tag">Girls / Boys Day</div>
+    </div>
+    <ul class="day-list">
+      <li><span class="time">All Day</span><span class="act">Boys Day / Girls Day</span></li>
+    </ul>
+    <img class="day-photo" src="web-photos/IMG_7684.JPG" alt="Devin giving the thumbs up">
+  </div>
+
+  <div class="day-card">
+    <div>
+      <div class="day-name">Sat</div>
+      <div class="day-date">Aug 29</div>
+      <div class="day-tag">Boat Day</div>
+    </div>
+    <ul class="day-list">
+      <li><span class="time">10 AM</span><span class="act">Breakfast</span></li>
+      <li><span class="time">12 PM</span><span class="act">Boat + Sand Bar Day</span></li>
+      <li><span class="time">7 PM</span><span class="act">Dinner</span></li>
+      <li><span class="time">8:30 PM</span><span class="act">Bach Events</span></li>
+    </ul>
+    <img class="day-photo" src="web-photos/IMG_1871.jpeg" alt="Saturday boat day photo">
+  </div>
+
+  <div class="day-card">
+    <div>
+      <div class="day-name">Sun</div>
+      <div class="day-date">Aug 30</div>
+      <div class="day-tag">Departure</div>
+    </div>
+    <ul class="day-list">
+      <li><span class="time">11 AM</span><span class="act">Head home</span></li>
+    </ul>
+    <img class="day-photo" src="web-photos/IMG_8127.JPG" alt="Sunday departure photo">
+  </div>
+  </div>
+</section>
+
+<section id="logistics">
+  <div class="col-main">
+  <div class="section-head">
+    <div class="section-num mono">02</div>
+    <h2 class="display">The Details</h2>
+  </div>
+  <div class="logistics-grid">
+    <div class="logistics-card">
+      <div class="big">Parker, AZ</div>
+      <div class="small">Riverfront Airbnb</div>
+    </div>
+    <div class="logistics-card">
+      <div class="big">Wed–Sun</div>
+      <div class="small">Aug 26–30, 2026</div>
+    </div>
+    <div class="logistics-address">
+      <a class="address-link"
+         href="https://www.google.com/maps/search/?api=1&query=36780+Winners+Creek%2C+Parker%2C+AZ+85344"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Open 36780 Winners Creek, Parker, AZ 85344 in Google Maps">
+        36780 Winners Creek, Parker, AZ 85344
+      </a>
+    </div>
+    <div class="logistics-note">
+      <strong>☀️ Desert Weather</strong><br>
+Expect temperatures well over <strong>100°F</strong>. Bring sunscreen, sunglasses, a hat, and anything else you need to stay cool while we're out on the river.
+    </div>
+  </div>
+  </div>
+</section>
+
+<section id="guests">
+  <div class="col-main">
+  <div class="section-head">
+    <div class="section-num mono">03</div>
+    <h2 class="display">Who's In</h2>
+  </div>
+  <div class="guest-row">
+    <span class="guest-chip">Devin</span>
+    <span class="guest-chip">Damon</span>
+    <span class="guest-chip">Jack</span>
+    <span class="guest-chip">Koosha</span>
+    <span class="guest-chip">Flip</span>
+    <span class="guest-chip">Mark</span>
+    <span class="guest-chip">Teni</span>
+    <span class="guest-chip">Shawn</span>
+  </div>
+  <div class="guest-row">
+    <span class="guest-chip">Daisy</span>
+    <span class="guest-chip">Thea</span>
+    <span class="guest-chip">Julia</span>
+    <span class="guest-chip">Lauren</span>
+    <span class="guest-chip">Orla</span>
+    <span class="guest-chip">Ryan</span>
+  </div>
+  </div>
+</section>
+
+<div class="field" aria-hidden="true">
+  <svg class="field-svg" viewBox="40 0 520 2200" preserveAspectRatio="xMidYMid slice">
+    <!-- Desert landscape accents -->
+    <g id="desert-accents">
+      <!-- subtle sandy patches -->
+      <path d="M120 180 C190 140 260 150 320 190 C275 225 205 232 135 210 Z" fill="#D7B57A" opacity=".34"/>
+      <path d="M300 890 C355 850 430 860 500 905 C445 940 370 946 315 922 Z" fill="#D7B57A" opacity=".28"/>
+      <path d="M120 1735 C205 1688 300 1702 360 1745 C300 1782 210 1790 135 1763 Z" fill="#D7B57A" opacity=".30"/>
+
+      <!-- saguaro -->
+      <g transform="translate(430 275)">
+        <path d="M0 95 V22 C0 7 19 7 19 22 V45
+                 C19 52 24 56 30 56 C36 56 40 51 40 45 V32
+                 C40 21 54 21 54 32 V52
+                 C54 68 44 79 30 79 C26 79 22 78 19 76 V95 Z"
+              fill="#4D8B4A"/>
+        <path d="M8 19 V89" stroke="#6FA565" stroke-width="2" opacity=".7"/>
+      </g>
+
+
+      <!-- tumbleweed -->
+      <g transform="translate(185 515)" fill="none" stroke="#8B6736" stroke-width="2" stroke-linecap="round" opacity=".95">
+        <circle cx="0" cy="0" r="23"/>
+        <circle cx="-3" cy="2" r="16"/>
+        <path d="M-20,-7 C-8,-2 7,-15 19,-5"/>
+        <path d="M-21,7 C-8,14 6,-2 20,9"/>
+        <path d="M-13,-19 C-6,-7 -13,8 -4,20"/>
+        <path d="M9,-20 C2,-8 13,6 7,21"/>
+        <path d="M-17,15 C-7,7 7,10 17,16"/>
+        <path d="M-16,-15 C-6,-8 7,-8 16,-14"/>
+        <path d="M-7,-21 C1,-12 2,9 12,18"/>
+        <path d="M15,-15 C7,-6 -8,4 -16,13"/>
+      </g>
+
+      <!-- sandstone rock clusters -->
+      <g>
+        <ellipse cx="455" cy="760" rx="24" ry="14" fill="#C77449"/>
+        <ellipse cx="480" cy="766" rx="17" ry="10" fill="#A95E3E"/>
+        <ellipse cx="438" cy="771" rx="14" ry="8" fill="#D28A5B"/>
+        <ellipse cx="215" cy="1460" rx="27" ry="15" fill="#C77449"/>
+        <ellipse cx="242" cy="1466" rx="16" ry="9" fill="#A95E3E"/>
+      </g>
+
+      <!-- desert grass -->
+      <g stroke="#D0B05A" stroke-width="3" stroke-linecap="round">
+        <path d="M330 420 L321 398 M330 420 L330 394 M330 420 L340 400 M330 420 L346 407"/>
+        <path d="M155 1040 L147 1018 M155 1040 L156 1015 M155 1040 L166 1020 M155 1040 L172 1028"/>
+        <path d="M430 1640 L421 1617 M430 1640 L430 1613 M430 1640 L441 1619 M430 1640 L448 1628"/>
+      </g>
+
+      <!-- creosote shrubs -->
+      <g fill="#708E45">
+        <circle cx="445" cy="1130" r="12"/><circle cx="458" cy="1135" r="10"/><circle cx="432" cy="1137" r="9"/>
+        <circle cx="245" cy="1870" r="12"/><circle cx="258" cy="1875" r="9"/><circle cx="232" cy="1877" r="8"/>
+      </g>
+    </g>
+
+    <g><rect x="150" y="70" width="12" height="64" rx="4" fill="#8A5E2E"/><circle cx="156" cy="58" r="30" fill="#4E9E38"/><circle cx="134" cy="70" r="20" fill="#57A83F"/><circle cx="180" cy="70" r="20" fill="#57A83F"/></g>
+
+<!-- ===== SOCCER ===== -->
+  <g stroke="#eef3f6" stroke-width="4" fill="none"><rect x="340" y="176" width="150" height="84" rx="2"/></g>
+  <g stroke="#dfe7ec" stroke-width="1"><path d="M355,176 L355,260 M385,176 L385,260 M415,176 L415,260 M445,176 L445,260 M475,176 L475,260 M340,196 L490,196 M340,216 L490,216 M340,236 L490,236"/></g>
+  <!-- ball -->
+  <circle cx="250" cy="416" r="15" fill="#fff" stroke="#b8bec3" stroke-width="1.4"/>
+  <path d="M250,408 L255,412 L253,418 L247,418 L245,412 Z" fill="#14262B"/>
+  <g fill="#14262B">
+    <path d="M250,401 l4,2 -1,4 -5,0 -1,-4 z"/>
+    <path d="M263,410 l2,4 -3,3 -4,-2 0,-4 z"/>
+    <path d="M258,424 l-1,4 -5,1 -2,-4 3,-4 z"/>
+    <path d="M242,424 l-3,2 -3,-3 1,-4 5,-1 z"/>
+    <path d="M237,410 l1,-4 4,-2 3,3 -2,5 z"/>
+  </g>
+  <g stroke="#14262B" stroke-width="1.2" fill="none" opacity=".9">
+    <path d="M250,408 L250,401"/>
+    <path d="M255,412 L263,410"/>
+    <path d="M253,418 L258,424"/>
+    <path d="M247,418 L242,424"/>
+    <path d="M245,412 L237,410"/>
+  </g>
+  <!-- kicker (sunset) -->
+  <rect x="177" y="318" width="16" height="27" rx="8" fill="#FF6B45"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M185,345 L176,376"/><path d="M185,345 L216,358"/><path d="M185,326 L168,342"/><path d="M185,326 L202,336"/></g>
+  <circle cx="185" cy="310" r="9" fill="#F3DEB8"/>
+  <!-- runner (teal) -->
+  <rect x="322" y="336" width="16" height="27" rx="8" fill="#1B7A8C"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M330,363 L318,392"/><path d="M330,363 L346,388"/><path d="M330,344 L314,352"/><path d="M330,344 L348,338"/></g>
+  <circle cx="330" cy="328" r="9" fill="#F3DEB8"/>
+
+  <!-- ===== MINI GOLF ===== -->
+  <ellipse cx="360" cy="722" rx="150" ry="52" fill="#4E9E38"/>
+  <ellipse cx="415" cy="718" rx="11" ry="5" fill="#25331d"/>
+  <rect x="414" y="650" width="4" height="70" fill="#c9ced2"/>
+  <path d="M418,652 L446,661 L418,670 Z" fill="#FF6B45"/>
+  <!-- bigger windmill -->
+  <rect x="292" y="662" width="42" height="56" rx="3" fill="#EEDDB0"/>
+  <path d="M288,662 L338,662 L313,640 Z" fill="#C0553A"/>
+  <rect x="307" y="694" width="12" height="24" fill="#C0955A"/>
+  <g fill="#7E5628"><rect x="310" y="646" width="6" height="44" rx="3"/><rect x="291" y="665" width="44" height="6" rx="3"/></g>
+  <circle cx="313" cy="668" r="4.5" fill="#5b3f1e"/>
+  <!-- ball + golfer -->
+  <circle cx="352" cy="726" r="5" fill="#fff" stroke="#cfcfcf"/>
+  <rect x="207" y="662" width="16" height="27" rx="8" fill="#0E5468"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M215,689 L208,720"/><path d="M215,689 L224,720"/><path d="M215,670 L236,692"/></g>
+  <path d="M236,692 L250,720" stroke="#9aa4ac" stroke-width="4" stroke-linecap="round"/>
+  <path d="M247,714 L255,726" stroke="#5b6169" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="215" cy="654" r="9" fill="#F3DEB8"/>
+
+  <!-- ===== CAMPFIRE ===== -->
+  <ellipse cx="300" cy="1092" rx="118" ry="38" fill="#5AA83F" opacity="0.55"/>
+  <rect x="276" y="1088" width="48" height="9" rx="4" fill="#8A5E2E" transform="rotate(15 300 1092)"/>
+  <rect x="276" y="1088" width="48" height="9" rx="4" fill="#7E5628" transform="rotate(-15 300 1092)"/>
+  <path d="M286,1092 Q283,1066 301,1048 Q319,1066 314,1092 Z" fill="#FF6B45"/>
+  <path d="M294,1092 Q292,1074 301,1060 Q311,1076 307,1092 Z" fill="#FFD36B"/>
+  <!-- left friend (arm to fire w/ stick) -->
+  <rect x="228" y="1050" width="15" height="24" rx="7" fill="#1B7A8C"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M235,1074 L254,1080 L254,1092"/><path d="M235,1060 L258,1070"/></g>
+  <path d="M256,1070 L282,1074" stroke="#7E5628" stroke-width="2.5"/>
+  <circle cx="235" cy="1042" r="8.5" fill="#F3DEB8"/>
+  <!-- right friend -->
+  <rect x="357" y="1050" width="15" height="24" rx="7" fill="#FF6B45"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M365,1074 L346,1080 L346,1092"/><path d="M365,1060 L344,1070"/></g>
+  <path d="M344,1070 L320,1074" stroke="#7E5628" stroke-width="2.5"/>
+  <circle cx="365" cy="1042" r="8.5" fill="#F3DEB8"/>
+  <!-- back friend -->
+  <rect x="293" y="1006" width="15" height="22" rx="7" fill="#0E5468"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M300,1028 L290,1044 M300,1028 L310,1044"/><path d="M300,1013 L286,1022 M300,1013 L314,1022"/></g>
+  <circle cx="300" cy="998" r="8" fill="#F3DEB8"/>
+
+  <!-- ===== BEER PONG (cups at both ends) ===== -->
+  <path d="M228,1360 L408,1360 L430,1392 L206,1392 Z" fill="#C88A4A"/>
+  <path d="M206,1392 L430,1392 L430,1400 L206,1400 Z" fill="#9E6E33"/>
+  <rect x="226" y="1398" width="8" height="52" fill="#7E5628"/><rect x="402" y="1398" width="8" height="52" fill="#7E5628"/>
+  <!-- left rack (apex right) -->
+  <g fill="#E23B2E"><path d="M229,1367 h14 l-2,8 h-10 z"/><path d="M229,1377 h14 l-2,8 h-10 z"/><path d="M229,1387 h14 l-2,8 h-10 z"/><path d="M242,1372 h14 l-2,8 h-10 z"/><path d="M242,1382 h14 l-2,8 h-10 z"/><path d="M255,1377 h14 l-2,8 h-10 z"/></g>
+  <g fill="#fff"><ellipse cx="236" cy="1367" rx="7" ry="1.6"/><ellipse cx="236" cy="1377" rx="7" ry="1.6"/><ellipse cx="236" cy="1387" rx="7" ry="1.6"/><ellipse cx="249" cy="1372" rx="7" ry="1.6"/><ellipse cx="249" cy="1382" rx="7" ry="1.6"/><ellipse cx="262" cy="1377" rx="7" ry="1.6"/></g>
+  <!-- right rack (apex left) -->
+  <g fill="#E23B2E"><path d="M393,1367 h14 l-2,8 h-10 z"/><path d="M393,1377 h14 l-2,8 h-10 z"/><path d="M393,1387 h14 l-2,8 h-10 z"/><path d="M380,1372 h14 l-2,8 h-10 z"/><path d="M380,1382 h14 l-2,8 h-10 z"/><path d="M367,1377 h14 l-2,8 h-10 z"/></g>
+  <g fill="#fff"><ellipse cx="400" cy="1367" rx="7" ry="1.6"/><ellipse cx="400" cy="1377" rx="7" ry="1.6"/><ellipse cx="400" cy="1387" rx="7" ry="1.6"/><ellipse cx="387" cy="1372" rx="7" ry="1.6"/><ellipse cx="387" cy="1382" rx="7" ry="1.6"/><ellipse cx="374" cy="1377" rx="7" ry="1.6"/></g>
+  <circle cx="318" cy="1330" r="4" fill="#fff" stroke="#ccc"/>
+  <rect x="160" y="1318" width="16" height="27" rx="8" fill="#0E5468"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M168,1345 L160,1376"/><path d="M168,1345 L176,1376"/><path d="M168,1326 L186,1310"/><path d="M168,1326 L152,1340"/></g>
+  <circle cx="168" cy="1308" r="9" fill="#F3DEB8"/>
+  <rect x="462" y="1318" width="16" height="27" rx="8" fill="#FF6B45"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M470,1345 L462,1376"/><path d="M470,1345 L478,1376"/><path d="M470,1326 L452,1312"/><path d="M470,1326 L486,1340"/></g>
+  <circle cx="470" cy="1308" r="9" fill="#F3DEB8"/>
+
+  <!-- ===== GAMING ===== -->
+  <rect x="120" y="1566" width="118" height="76" rx="6" fill="#1B2A33"/>
+  <rect x="128" y="1574" width="102" height="60" rx="2" fill="#3E8FB8"/>
+  <rect x="140" y="1588" width="4" height="20" fill="#fff"/><rect x="214" y="1592" width="4" height="20" fill="#fff"/><circle cx="180" cy="1600" r="3.5" fill="#fff"/>
+  <rect x="170" y="1642" width="16" height="20" fill="#33424c"/><rect x="150" y="1662" width="58" height="7" rx="3" fill="#33424c"/>
+  <!-- couch -->
+  <rect x="300" y="1612" width="188" height="38" rx="10" fill="#C96A58"/>
+  <rect x="300" y="1646" width="188" height="40" rx="10" fill="#B65A4A"/>
+  <rect x="296" y="1622" width="20" height="64" rx="8" fill="#A94E3F"/><rect x="472" y="1622" width="20" height="64" rx="8" fill="#A94E3F"/>
+  <!-- gamer 1 -->
+  <rect x="342" y="1618" width="16" height="30" rx="8" fill="#1B7A8C"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M350,1648 L344,1676"/><path d="M350,1648 L358,1676"/><path d="M348,1632 L338,1640"/><path d="M352,1632 L340,1648"/></g>
+  <rect x="330" y="1640" width="15" height="8" rx="2" fill="#2b3942"/>
+  <circle cx="350" cy="1610" r="9" fill="#F3DEB8"/>
+  <!-- gamer 2 -->
+  <rect x="422" y="1618" width="16" height="30" rx="8" fill="#FF6B45"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M430,1648 L424,1676"/><path d="M430,1648 L438,1676"/><path d="M428,1632 L418,1640"/><path d="M432,1632 L420,1648"/></g>
+  <rect x="410" y="1640" width="15" height="8" rx="2" fill="#2b3942"/>
+  <circle cx="430" cy="1610" r="9" fill="#F3DEB8"/>
+
+  <!-- ===== CORNHOLE (1 per side) ===== -->
+<g transform="translate(0,-70)">
+  <path d="M150,2095 L300,2095 L282,2045 L192,2045 Z" fill="#D79A54"/>
+  <path d="M150,2095 L300,2095 L300,2103 L150,2103 Z" fill="#B87938"/>
+  <ellipse cx="236" cy="2060" rx="13" ry="6" fill="#3a2f22"/>
+  <rect x="205" y="2072" width="15" height="15" rx="3" fill="#E23B2E" transform="rotate(12 212 2079)"/>
+  <path d="M392,2012 L482,2012 L470,1982 L416,1982 Z" fill="#D79A54"/>
+  <path d="M392,2012 L482,2012 L482,2018 L392,2018 Z" fill="#B87938"/>
+  <ellipse cx="440" cy="1992" rx="8" ry="4" fill="#3a2f22"/>
+  <rect x="330" y="2004" width="14" height="14" rx="3" fill="#1B7A8C" transform="rotate(20 337 2011)"/>
+  <!-- near player -->
+  <rect x="112" y="1996" width="16" height="27" rx="8" fill="#0E5468"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M120,2023 L112,2052"/><path d="M120,2023 L128,2052"/><path d="M120,2004 L138,1994"/><path d="M120,2004 L104,2014"/></g>
+  <circle cx="120" cy="1988" r="9" fill="#F3DEB8"/>
+  <!-- far player -->
+  <rect x="478" y="1930" width="16" height="27" rx="8" fill="#FF6B45"/>
+  <g stroke="#14262B" stroke-width="5" stroke-linecap="round" fill="none"><path d="M486,1957 L478,1986"/><path d="M486,1957 L494,1986"/><path d="M486,1938 L502,1950"/><path d="M486,1938 L470,1948"/></g>
+  <circle cx="486" cy="1922" r="9" fill="#F3DEB8"/>
+</g>
+  </svg>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="photo-gallery-bottom">
+  <div class="photo-band">
+  <img src="web-photos/IMG_7802.JPEG" alt="Daisy">
+  <img src="web-photos/IMG_4899.jpg" alt="Devin">
+  <img src="web-photos/IMG_8710.JPG" alt="Daisy">
+  <img src="web-photos/IMG_1019.JPG" alt="Devin">
+  <img src="web-photos/IMG_4529.jpg" alt="Daisy">
+  <img src="web-photos/IMG_8127.JPG" alt="Devin">
+  <img src="web-photos/IMG_4530.jpg" alt="Daisy">
+  <img src="web-photos/IMG_1063.jpg" alt="Daisy">
+  </div>
+  <div class="photo-band">
+  <img src="web-photos/IMG_1247.JPG" alt="Bach trip photo">
+  <img src="web-photos/IMG_2148.JPEG" alt="Bach trip photo">
+  <img src="web-photos/IMG_3285.jpeg" alt="Bach trip photo">
+  <img src="web-photos/IMG_4623.JPG" alt="Bach trip photo">
+  <img src="web-photos/IMG_6288.jpeg" alt="Bach trip photo">
+  <img src="web-photos/IMG_0694.jpeg" alt="Bach trip photo">
+</div>
+</div>
+
+<footer>
+  Parker, AZ · Aug 26–30, 2026 · see you on the river 🌊
+</footer>
+
+<script>
+  const tripDate = new Date("2026-08-26T09:00:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = tripDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = '<div class="countdown-num" style="font-size:28px;">We&#39;re on the river! 🌊</div>';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('cd-days').textContent = days;
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
