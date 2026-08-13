@@ -624,6 +624,55 @@ linear-gradient(180deg,
     text-underline-offset: 4px;
   }
 
+
+  .playlist-card {
+    grid-column: 1 / -1;
+    background: var(--river-deep);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .playlist-card a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 28px;
+    color: var(--cream);
+    text-decoration: none;
+  }
+
+  .playlist-card .playlist-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: var(--sunset);
+    line-height: 1;
+  }
+
+  .playlist-card .playlist-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 7px;
+    opacity: .78;
+  }
+
+  .playlist-card .playlist-arrow {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: var(--sunset);
+    flex: 0 0 auto;
+  }
+
+  .playlist-card a:hover .playlist-arrow {
+    transform: translateX(4px);
+  }
+
+  .playlist-card .playlist-arrow {
+    transition: transform .18s ease;
+  }
+
   .logistics-note {
     grid-column: 1 / -1;
     background: var(--sand);
@@ -951,9 +1000,19 @@ linear-gradient(180deg,
         36780 Winners Creek, Parker, AZ 85344
       </a>
     </div>
+    <div class="playlist-card">
+      <a href="https://open.spotify.com/playlist/2cfEwB393nScxDKTh654IJ?si=HwztFIqQT2quNVwp7m44Pw&utm_source=copy-link&pi=PvaVZfXpQwerP" target="_blank" rel="noopener noreferrer" aria-label="Open the Bach Trip Playlist on Spotify">
+        <div>
+          <div class="playlist-title">🎵 Bach Trip Playlist</div>
+          <div class="playlist-subtitle">Click to open the playlist on Spotify · Add your songs</div>
+        </div>
+
     <div class="logistics-note">
       <strong>☀️ Desert Weather</strong><br>
 Expect temperatures well over <strong>100°F</strong>. Bring sunscreen, sunglasses, a hat, and anything else you need to stay cool while we're out on the river.
+    </div>
+        <div class="playlist-arrow">LISTEN →</div>
+      </a>
     </div>
   </div>
   </div>
