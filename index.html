@@ -325,6 +325,34 @@ linear-gradient(180deg,
     opacity: 0.65;
   }
 
+
+  @media (max-width: 560px) {
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 7px;
+      width: 100%;
+      max-width: 430px;
+      padding: 0 4px;
+    }
+
+    .countdown-unit {
+      min-width: 0;
+      width: 100%;
+      padding: 13px 4px;
+      border-radius: 12px;
+    }
+
+    .countdown-num {
+      font-size: clamp(27px, 9vw, 38px);
+    }
+
+    .countdown-unit-label {
+      font-size: 8px;
+      letter-spacing: 0.8px;
+    }
+  }
+
   /* ---------- FULL-BLEED PHOTO BANDS ---------- */
   /* Tiles stretch edge-to-edge. Packing many photos per band keeps each tile
      narrow and tall, so the portrait shots crop at the sides (not the heads). */
@@ -682,7 +710,38 @@ linear-gradient(180deg,
   }
 
   @media (max-width: 560px) {
-    .logistics-grid { grid-template-columns: 1fr; }
+    .logistics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .logistics-card,
+    .logistics-address,
+    .playlist-card,
+    .logistics-note {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .logistics-card,
+    .logistics-address,
+    .logistics-note {
+      padding: 20px;
+    }
+
+    .playlist-card a {
+      padding: 20px;
+    }
+
+    .logistics-card .big,
+    .logistics-address .address-link,
+    .playlist-card .playlist-title {
+      font-size: 27px;
+    }
+
+    .logistics-address .address-link {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
   }
 
   /* ---------- GUEST LIST ---------- */
@@ -887,9 +946,9 @@ linear-gradient(180deg,
 
 
 <div class="photo-band">
-  <img src="web-photos/IMG_8102.JPG" alt="Daisy">
-  <img src="web-photos/IMG_0888.JPG" alt="Devin">
   <img src="web-photos/IMG_8273.JPG" alt="Daisy">
+  <img src="web-photos/IMG_0888.JPG" alt="Devin">
+  <img src="web-photos/IMG_8102.JPG" alt="Daisy">
   <img src="web-photos/IMG_3834.jpg" alt="Devin">
   <img src="web-photos/IMG_8819.JPG" alt="Daisy">
   <img src="web-photos/IMG_6347.jpg" alt="Devin">
